@@ -1,4 +1,14 @@
 ---
+# Stages
+do_setup: true
+do_image_build: true
+do_cleanup: true
+do_uninstall: false
+
+update_host: true
+add_user: true
+builder_user: image-builder
+
 git_remote_repo: file:///tmp/rhel-image-blueprints.git
 git_remote_repo_version: master
 local_repo_path: /tmp/blueprint-repo

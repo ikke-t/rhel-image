@@ -1,0 +1,21 @@
+---
+
+- name: Do setup
+  include_tasks: image_builder_setup.yml
+  when: do_setup
+
+- name: Do build
+  include_tasks: image_build.yml
+  when: do_image_build
+
+- name: Do cleanup
+  include_tasks: image_builder_cleanup.yml
+  when: do_cleanup
+
+- name: Do uninstall
+  include_tasks: image_builder_uninstall.yml
+  when: do_uninstall
+
+- name: Do setup
+  include_tasks: 
+  when: do_setup

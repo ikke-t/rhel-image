@@ -1,8 +1,16 @@
-- name: Build RHEL image with Image Builder
+---
+
+- name: build rhel image
   hosts: all
   become: true
+  vars:
+    git_remote_repo: file:///tmp/rhel-image-blueprints.git
+    git_remote_repo_version: master
+    image_blueprint: coollab-base-image
+    image_size_kb: 20480
+    image_output_type: qcow2
+    update_host: false
+    add_user: false
+
   roles:
-    - image_builder_setup
-    - image_builder_image_build
-    - image_builder_cleanup
-    #- image_builder_uninstall
+    - rhel-image
